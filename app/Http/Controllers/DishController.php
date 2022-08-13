@@ -120,13 +120,8 @@ class DishController extends Controller
         return redirect()->route('dish.index')->with('success','Dish deleted successfully');
     }
 
-    public function order(){
-        $orders = Order::whereIn('status', [1, 2])->get();
-        $rawStatus = config('restaurant.orderStatus');
-        $status = array_flip($rawStatus);
 
-        return view('kitchen.order',compact('orders','status'));
-    }
+    /*==================      Order     ===================*/
 
     public function orderApprove(Order $order){
         $order->status = config('restaurant.orderStatus.processing');
@@ -150,5 +145,13 @@ class DishController extends Controller
         $order->status = config('restaurant.orderStatus.serve');
         $order->save();
         return redirect()->route('order.form')->with('success','Order Serve to Customer successfully');
+    }
+
+    public function order(){
+        $orders = Order::whereIn('status', [1, 2])->get();
+        $rawStatus = config('restaurant.orderStatus');
+        $status = array_flip($rawStatus);
+
+        return view('kitchen.order',compact('orders','status'));
     }
 }

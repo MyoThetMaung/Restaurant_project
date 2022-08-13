@@ -50,23 +50,39 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <li class="nav-item menu-open">
             <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{ route('dish.index') }}" class="nav-link {{ Request::segment(1) == 'dish' ? 'active' : '' }}">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dishes</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('order') }}" class="nav-link {{ Request::segment(1) == 'order' ? 'active' : '' }}">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Orders</p>
-                </a>
-              </li>
-              <li class="mt-5 nav-item">
-                <a href="{{ route('order.form') }}" class=" nav-link btn btn-success">
-                  Order Form | List
-                </a>
-              </li>
+                <li class="nav-item">
+                    <a href="{{ route('dish.index') }}" class="nav-link {{ Request::segment(1) == 'dish' ? 'active' : '' }}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Dishes</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('category.index') }}" class="nav-link {{ Request::segment(1) == 'category' ? 'active' : '' }}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Categories</p>
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a href="{{ route('table.index') }}" class="nav-link {{ Request::segment(1) == 'table' ? 'active' : '' }}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Tables</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="{{ route('order') }}" class="nav-link {{ Request::segment(1) == 'order' ? 'active' : '' }}">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Orders</p>
+                    </a>
+                </li>
+                <li class="mt-5 nav-item">
+                    <a href="{{ route('order.form') }}" class=" nav-link btn btn-success">
+                        Waiter Panel
+                    </a>
+                </li>
             </ul>
           </li>
         </ul>
@@ -98,7 +114,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </form>
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2021-2022 <a href="">MTM</a>.</strong> All rights reserved.
   </footer>
 </div>
 <!-- ./wrapper -->

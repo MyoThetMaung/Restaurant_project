@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DishController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\TableController;
+use App\Http\Controllers\CategoryController;
 
 Auth::routes();
 
@@ -13,6 +15,9 @@ Route::post('orderSubmit',[OrderController::class,'orderSubmit'])->name('order.s
 
 //Kitchen Panel
 Route::resource('dish', DishController::class);
+Route::resource('category', CategoryController::class);
+Route::resource('table', TableController::class);
+
 Route::get('order',[DishController::class,'order'])->name('order');
 Route::get('order/approve/{order}',[DishController::class,'orderApprove'])->name('order.approve');
 Route::get('order/cancel/{order}',[DishController::class,'orderCancel'])->name('order.cancel');

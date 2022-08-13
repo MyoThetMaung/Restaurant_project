@@ -26,6 +26,7 @@ class OrderController extends Controller
 
     public function orderSubmit(Request $request){
         $data = array_filter($request->except('_token','table'));
+        // dd($data);
         $order_id = rand();
 
         foreach($data as $key=>$value){

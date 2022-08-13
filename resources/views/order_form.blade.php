@@ -23,7 +23,7 @@
             <div class="card card-primary card-tabs">
                 <div class="card-header p-0 pt-1">
                     <ul class="nav nav-tabs" id="custom-tabs-two-tab" role="tablist">
-                        <li class="pt-2 px-3"><h3 class="card-title">Order</h3></li>
+                        <li class="pt-2 px-3"><h3 class="card-title">Waiter Panel</h3></li>
                         <li class="nav-item">
                             <a class="nav-link active" id="custom-tabs-two-home-tab" data-toggle="pill" href="#custom-tabs-two-home" role="tab" aria-controls="custom-tabs-two-home" aria-selected="true">Order Form</a>
                         </li>
@@ -40,6 +40,7 @@
                 </div>
             @endif
             <div class="tab-pane fade show active" id="custom-tabs-two-home" role="tabpanel" aria-labelledby="custom-tabs-two-home-tab">
+                <h2 class="text-success mb-4">Orders will be delivered to Kitchen</h2>
                 <form action="{{ route('order.submit') }}" method="POST">
                     @csrf
                     <div class="row">
@@ -68,6 +69,7 @@
                 </form>
             </div>
             <div class="tab-pane fade" id="custom-tabs-two-profile" role="tabpanel" aria-labelledby="custom-tabs-two-profile-tab">
+                <h2 class="text-success mb-4">These orders come from Kitchen Panel and Ready to Serve </h2>
                 <table id="order" class="table table-bordered table-striped">
                     <thead>
                         <tr>
